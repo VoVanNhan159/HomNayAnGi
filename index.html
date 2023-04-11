@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        /* CSS cho nút "Chọn" */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+         /* Lớp CSS để thay đổi màu sắc */
+         .change-color {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* CSS cho kết quả */
+        #result {
+            margin-top: 10px;
+        }
+    </style>
     <title>Chọn món cho ngày hôm nay</title>
     <script>
         // Hàm để chọn 3 phần tử từ 3 mảng
@@ -30,12 +53,16 @@
             // Hiển thị kết quả trên giao diện người dùng
             var resultElement = document.getElementById("result");
             resultElement.innerHTML = "Kết quả: " + result1.join(", ") + "; " + result2.join(", ");
+            var buttonElement = document.getElementById("btnChoose");
+            var colors = ["#007bff", "#28a745", "#dc3545", "#ffc107"]; // Mảng màu sắc
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Lấy một màu ngẫu nhiên
+            buttonElement.style.backgroundColor = randomColor; // Thiết lập màu sắc cho nút
         }
     </script>
 </head>
 <body>
     <h1>Chọn 3 phần tử từ 3 mảng</h1>
-    <button onclick="chooseElements()">Chọn</button>
+    <button onclick="chooseElements()" id="btnChoose">Chọn</button>
     <p id="result"></p>
 </body>
 </html>
