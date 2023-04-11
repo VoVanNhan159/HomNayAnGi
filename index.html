@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chọn món cho ngày hôm nay</title>
+    <script>
+        // Hàm để chọn 3 phần tử từ 3 mảng
+        function chooseElements() {
+            var array1 = ["Gà", "Vịt", "Cá lóc", "Cá Diêu Hồng", "Khô", "Trứng", "Thịt", "Mực", "Tàu hủ"];
+            var array2 = ["Chiên", "Kho"];
+            var array3 = ["Cải thìa", "Dưa leo", "Tần ô", "Bí đao", "Bí đỏ", "Rau muống", "Đậu bắp", "Cải ngọt"];
+            var array4 = ["Canh", "Xào", "Luộc"];
+            var result1 = [];
+            var result2 = [];
+
+            var index1 = Math.floor(Math.random() * array1.length);
+            var index2 = Math.floor(Math.random() * array2.length);
+            var index3 = Math.floor(Math.random() * array3.length);
+            var index4 = Math.floor(Math.random() * array4.length);
+
+            result1.push(array1[index1]);
+            result1.push(array2[index2]);
+            result2.push(array3[index3]);
+            result2.push(array4[index4]);
+
+            array1.splice(index1, 1);
+            array2.splice(index2, 1);
+            array3.splice(index3, 1);
+            array4.splice(index4, 1);
+
+            // Hiển thị kết quả trên giao diện người dùng
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Kết quả: " + result1.join(", ") + "; " + result2.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Chọn 3 phần tử từ 3 mảng</h1>
+    <button onclick="chooseElements()">Chọn</button>
+    <p id="result"></p>
+</body>
+</html>
