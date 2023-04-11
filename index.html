@@ -54,8 +54,7 @@
             var resultElement = document.getElementById("result");
             resultElement.innerHTML = "Kết quả: " + result1.join(", ") + "; " + result2.join(", ");
             var buttonElement = document.getElementById("btnChoose");
-            var colors = ["#007bff", "#28a745", "#dc3545", "#ffc107"]; // Mảng màu sắc
-            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Lấy một màu ngẫu nhiên
+            var randomColor = getRandomColor();
             buttonElement.style.backgroundColor = randomColor; // Thiết lập màu sắc cho nút
         }
     </script>
